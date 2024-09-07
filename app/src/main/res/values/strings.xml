@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">tp_equipo6</string>
+    <string name="date_example">DD/MM/AAAA (Ej: 01/01/2000)</string>
+    <string name="PrivacyPolict_text">Acepto las politicas de privacidad</string>
+    <string name="privacyPolicyTerms">* ¿Qué información solicita y guarda esta aplicación de sus usuarios? Los mínimos y necesarios para una identificación \"generica\": datos de registro que incluyen nombe de usuario, año de nacimiento y correo electrónico. \n* Esta app se reserva el derecho a enviar a sus usuarios notificaciones con respecto a información relevante en cuanto a condiciones de uso, cambios importantes y otras novedades de la web.\n* esta app no se hace responsable de las opiniones vertidas por los usuarios en esta página, y se reserva el derecho de eliminar cualquier comentario total o parcial que pueda considerar ofensivo o inapropiado.
+    \n* Cualquier indicio de manipulación de las puntuaciones o uso indebido, incluyendo hacer uso de las herramientas de la web -tales como críticas, mensajes o listas- para insultar u ofender al resto de miembros registrados, conllevará el bloqueo y/o la eliminación automática del registro.
+        \n* Tendrán una atención especial tanto las películas de estreno/próximo estreno en cartelera de cada país, como las que estén a concurso y/o fuera de concurso en festivales de cine, y -en general- las estrenadas recientemente y/o con pocos votos, así como todas aquellas películas, cortometrajes, documentales y series de contenido político, sociológico, histórico y/o con contenido propagandístico o ideológico de cualquier índole, susceptibles de ser sensibles a la manipulación
+        \n* queremos reafirmar nuestro compromiso de imparcialidad y veracidad de todo el contenido existente en la página. Este compromiso será específicamente importante en el control y fiabilidad de:
+
+Notas medias de todas las películas y series de TV.
+Votaciones de todos los usuarios a todas las películas.
+Extractos elegidos de los medios profesionales.
+Tendencia asignada a las críticas profesionales.
+Valoración de las críticas de todos los usuarios a todas las películas.
+
+    </string>
+    <!-- Array para el Spinner -->
+    <string-array name="genero_array">
+        <item />
+        <item>Masculino</item>
+        <item>Femenino</item>
+        <item>No binario</item>
+        <item>Prefiero no decir</item>
+    </string-array>
 </resources>
