@@ -78,7 +78,7 @@ class registro : AppCompatActivity() {
                 //intent to login  -- CAMBIAR A LOGIN/MAIN CUANDO ESTE LISTO (!)
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
-                //finish()
+                finish()
             }
         }
 
