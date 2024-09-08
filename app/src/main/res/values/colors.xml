@@ -5,4 +5,6 @@
     <color name="blue">#3F51B5</color>
     <color name="red">#FF1100</color>
     <color name="fondoCine">#5597DE</color>
+    <color name="BordeCompleteData">#9F00C5</color>
+    <color name="lavanda">#B57EDC</color>
 </resources>

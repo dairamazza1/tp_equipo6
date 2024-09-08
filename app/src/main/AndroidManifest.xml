@@ -34,6 +34,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".CompleteMovieData"
+            android:exported="false"/>
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
     </application>
