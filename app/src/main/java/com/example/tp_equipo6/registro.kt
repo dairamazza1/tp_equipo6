@@ -2,7 +2,6 @@ package com.example.tp_equipo6
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
@@ -25,6 +24,7 @@ class registro : AppCompatActivity() {
     lateinit var cbPolicyPrivacy : CheckBox
     lateinit var btnregistro: Button
     lateinit var etPolicyPrivacy: TextView
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,18 +54,25 @@ class registro : AppCompatActivity() {
         }
 
         btnregistro.setOnClickListener {
+            val newUserName = etName.text.toString()
+            val newUserLastName = etLastName.text.toString()
+            val newUserEmail = etEmail.text.toString()
+            val newUserPassword = etPassword.text.toString()
+            val newUserBirthday = etBirthday.text.toString()
+            val newUserGenre = spGenre.selectedItem?.toString()
+
             //validate  values
             var msgToast = ""
-            if (etName.text.toString().isEmpty()) msgToast += "Completar nombre\n"
-            if (etLastName.text.toString().isEmpty()) msgToast += "Completar apellido\n"
-            if (etEmail.text.toString().isEmpty()) msgToast += "Completar email\n"
-            if(!isValidEmail(etEmail.text.toString()) && etEmail.text.toString().isNotBlank()) msgToast += "Email inválido\n"
-            if (etBirthday.text.toString().isEmpty()) msgToast += "Completar fecha de nacimiento\n"
-            if(!isValidDate(etBirthday.text.toString()) && etBirthday.text.toString().isNotBlank()) msgToast += "Fecha de nacimiento inválida\n"
-            if (etPassword.text.toString().isEmpty()) msgToast += "Completar contraseña\n"
-            if(!isValidPassword(etPassword.text.toString()) && etPassword.text.toString().isNotBlank()) msgToast += "La contraseña debe tener al menos una mayuscula, un caracter especial y 6 o mas caracteres \n"
+            if (newUserName.isEmpty()) msgToast += "Completar nombre\n"
+            if (newUserLastName.isEmpty()) msgToast += "Completar apellido\n"
+            if (newUserEmail.isEmpty()) msgToast += "Completar email\n"
+            if(!isValidEmail(newUserEmail) && newUserEmail.isNotBlank()) msgToast += "Email inválido\n"
+            if (newUserBirthday.isEmpty()) msgToast += "Completar fecha de nacimiento\n"
+            if(!isValidDate(newUserBirthday) && newUserBirthday.isNotBlank()) msgToast += "Fecha de nacimiento inválida\n"
+            if (newUserPassword.isEmpty()) msgToast += "Completar contraseña\n"
+            if(!isValidPassword(newUserPassword) && newUserPassword.isNotBlank()) msgToast += "La contraseña debe tener al menos una mayuscula, un caracter especial y 6 o mas caracteres \n"
             if(!cbPolicyPrivacy.isChecked) msgToast += "Debe aceptar las politicas de privacidad\n"
-            if (spGenre.selectedItem?.toString().isNullOrEmpty()) msgToast+= "Seleccione un genero válido\n"
+            if (newUserGenre.isNullOrEmpty()) msgToast+= "Seleccione un genero válido\n"
 
 
             //show message
@@ -73,7 +80,10 @@ class registro : AppCompatActivity() {
 
 
             if(msgToast.isBlank() && cbPolicyPrivacy.isChecked){
-                Log.i("TODO", "Agregar funcionalidad de recordar usuario y contraseña y agregar en bd")
+
+                val newUser = Usuario(newUserName,newUserLastName,spGenre.selectedItem.toString(),newUserBirthday,newUserEmail,newUserPassword)
+
+                AppDatabase.getDatabase(applicationContext).usuarioDao().insert(newUser)
 
                 //intent to login  -- CAMBIAR A LOGIN/MAIN CUANDO ESTE LISTO (!)
                 val intent = Intent(this, MainActivity::class.java)
