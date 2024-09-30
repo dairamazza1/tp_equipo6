@@ -2,6 +2,7 @@ package com.example.tp_equipo6
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
@@ -80,15 +81,29 @@ class registro : AppCompatActivity() {
 
 
             if(msgToast.isBlank() && cbPolicyPrivacy.isChecked){
+                val dao = AppDatabase.getDatabase(applicationContext).usuarioDao()
+                //validar que el usuario ya se encuentre en la BD, sino, guardar nuevo usuario
+                Log.d("DB_DEBUG", dao.getUserByEmail(newUserEmail).toString() )
+                if(dao.getUserByEmail(newUserEmail).isEmpty()) {
 
-                val newUser = Usuario(newUserName,newUserLastName,spGenre.selectedItem.toString(),newUserBirthday,newUserEmail,newUserPassword)
+                    val newUser = Usuario(
+                        newUserName,
+                        newUserLastName,
+                        spGenre.selectedItem.toString(),
+                        newUserBirthday,
+                        newUserEmail,
+                        newUserPassword
+                    )
 
-                AppDatabase.getDatabase(applicationContext).usuarioDao().insert(newUser)
+                    dao.insert(newUser)
 
-                //intent to login  -- CAMBIAR A LOGIN/MAIN CUANDO ESTE LISTO (!)
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-                finish()
+                    val intent = Intent(this, LoginActivity::class.java)
+                    startActivity(intent)
+                    finish()
+
+                }else{
+                    Toast.makeText(this, "El usuario ya se encuentra registrado", Toast.LENGTH_SHORT).show()
+                }
             }
         }
 

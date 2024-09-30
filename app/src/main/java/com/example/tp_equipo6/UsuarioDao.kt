@@ -11,4 +11,8 @@ interface UsuarioDao {
 
     @Insert
     fun insert(usuario: Usuario)
+
+    // Consulta por email
+    @Query("SELECT * FROM user_entity WHERE email = :email")
+    fun getUserByEmail(email: String): List<Usuario>
 }
