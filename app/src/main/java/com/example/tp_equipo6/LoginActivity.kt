@@ -47,24 +47,40 @@ class LoginActivity : AppCompatActivity() {
 
             //Texto que ingresa el usuario.
             var usuario= etUsuario.text.toString()
-
+            var password = etPassword.text.toString()
             //Pregunto si alguna de las dos cosas esta vacia.
-            if(usuario.isEmpty() || etPassword.text.toString().isEmpty() ){
+            if(usuario.isEmpty() || password.isEmpty() ){
 
                 var mensaje= "Completar Datos"
                 Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
 
-            } else{
-
-                if(cbRecordarUsuario.isChecked){
-
-                    Log.i("TODO", "Funcionalidad de recordar Usuario y Contraseña")
+            }
+            else{
+                var usuariosRegistrados: MutableList<Usuario> = ArrayList()
+                var bddUsuario = AppDatabase.getDatabase(applicationContext)
+                usuariosRegistrados.addAll(bddUsuario.usuarioDao().getAll())
+                var uRegistrado: Boolean =false
+                var i:Int =0
+                while (i<usuariosRegistrados.size && uRegistrado == false){
+                    if(usuario == usuariosRegistrados.get(i).userName.toString() && password == usuariosRegistrados.get(i).userPassword.toString()){
+                        uRegistrado = true;
+                    }
+                    i++
                 }
 
-                val intent= Intent(this, MainActivity::class.java)
-                startActivity(intent)
-                finish()
+                if(uRegistrado == false){
+                    Toast.makeText(this, "El usuario o contraseña ingresado no existe", Toast.LENGTH_SHORT).show()
+                }
+                else {
+                    if (cbRecordarUsuario.isChecked) {
 
+                        Log.i("TODO", "Funcionalidad de recordar Usuario y Contraseña")
+                    }
+
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
             }
         }
 
