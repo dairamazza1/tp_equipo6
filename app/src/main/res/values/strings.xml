@@ -22,4 +22,9 @@ Valoración de las críticas de todos los usuarios a todas las películas.
         <item>No binario</item>
         <item>Prefiero no decir</item>
     </string-array>
+
+    //Recordar Usuario
+    <string name="sp_credenciales">SP_CREDENCIALES\n</string>
+    <string name="nombre_usuario">NOMBRE\n</string>
+    <string name="password_usuario">PASSWORD\n</string>
 </resources>

@@ -37,6 +37,18 @@ class LoginActivity : AppCompatActivity() {
         btnRegistrarse = findViewById(R.id.btnRegistrarse)
         btnIniciarSesion = findViewById(R.id.btnIniciarSesion)
 
+        var preferencias = getSharedPreferences(resources.getString(R.string.sp_credenciales), MODE_PRIVATE)
+        var usuarioGuardado = preferencias.getString(resources.getString(R.string.nombre_usuario),"")
+        var passwordGuardado = preferencias.getString(resources.getString(R.string.password_usuario),"")
+
+        if(usuarioGuardado!= "" && passwordGuardado!= ""){
+
+            if(usuarioGuardado != null){
+
+                starMainActivity(usuarioGuardado)
+            }
+        }
+
         btnRegistrarse.setOnClickListener{
 
             val intent= Intent(this, registro::class.java)
@@ -74,16 +86,24 @@ class LoginActivity : AppCompatActivity() {
                 else {
                     if (cbRecordarUsuario.isChecked) {
 
-                        Log.i("TODO", "Funcionalidad de recordar Usuario y Contraseña")
+                        var preferencias = getSharedPreferences(resources.getString(R.string.sp_credenciales), MODE_PRIVATE)
+                        preferencias.edit().putString(resources.getString(R.string.nombre_usuario),usuario).apply()
+                        preferencias.edit().putString(resources.getString(R.string.password_usuario),password).apply()
+
                     }
 
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)
-                    finish()
+                    starMainActivity(usuario)
                 }
             }
         }
 
 
+    }
+
+    private fun starMainActivity(usuario: String) {
+        val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra(resources.getString(R.string.nombre_usuario),usuario)
+        startActivity(intent)
+        finish()
     }
 }
