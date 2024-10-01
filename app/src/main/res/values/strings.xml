@@ -14,6 +14,8 @@ Tendencia asignada a las críticas profesionales.
 Valoración de las críticas de todos los usuarios a todas las películas.
 
     </string>
+    <string name="CerrarSesion">Cerrar Sesion</string>
+    <string name="titulo">Reseñas App\n</string>
     <!-- Array para el Spinner -->
     <string-array name="genero_array">
         <item />
@@ -27,4 +29,6 @@ Valoración de las críticas de todos los usuarios a todas las películas.
     <string name="sp_credenciales">SP_CREDENCIALES\n</string>
     <string name="nombre_usuario">NOMBRE\n</string>
     <string name="password_usuario">PASSWORD\n</string>
+    <string name="movie_icon">Icono pelicula</string>
+    <string name="expansion_icon">.\n</string>
 </resources>

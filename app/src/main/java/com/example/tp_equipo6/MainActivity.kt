@@ -1,8 +1,12 @@
 package com.example.tp_equipo6
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.RecyclerView
@@ -15,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var rvPeliculaAccion: RecyclerView
     lateinit var rvPeliculaTerror: RecyclerView
     lateinit var peliculasAdapter: PeliculaAdapter
+    lateinit var toolbar : Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +50,10 @@ class MainActivity : AppCompatActivity() {
         rvPeliculaTerror = findViewById(R.id.rvPeliculasTerror)
         peliculasAdapter = PeliculaAdapter(getPeliculasTerror(),this)
         rvPeliculaTerror.adapter = peliculasAdapter
+
+        toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar!!.title = resources.getString(R.string.titulo)
     }
 
     private fun getPeliculasTerror(): MutableList<Pelicula> {
@@ -96,5 +105,17 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_cerrarsesion,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId==R.id.itemCerrarSesion){
+            val intent = Intent(this,LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        return super.onOptionsItemSelected(item)
+    }
 }

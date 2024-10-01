@@ -8,6 +8,7 @@
     tools:context=".registro"
     android:orientation="vertical"
     android:gravity="center_horizontal"
+    android:background="@color/black"
     >
 
 

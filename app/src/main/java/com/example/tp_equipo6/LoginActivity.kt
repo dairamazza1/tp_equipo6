@@ -81,7 +81,7 @@ class LoginActivity : AppCompatActivity() {
                 }
 
                 if(uRegistrado == false){
-                    Toast.makeText(this, "El usuario o contraseña ingresado no existe", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "El usuario ingresado no existe", Toast.LENGTH_SHORT).show()
                 }
                 else {
                     if (cbRecordarUsuario.isChecked) {
