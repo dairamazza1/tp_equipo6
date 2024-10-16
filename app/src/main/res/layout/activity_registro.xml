@@ -8,7 +8,7 @@
     tools:context=".registro"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:background="@color/black"
+    android:background="@drawable/fondo_app"
     >
 
 
@@ -18,6 +18,7 @@
         android:layout_height="wrap_content"
         android:text="Nombre de usuario"
         android:textSize="20sp"
+        android:textColor="@color/white"
         />
     <EditText
         android:layout_width="match_parent"
@@ -27,6 +28,7 @@
         android:layout_gravity="center"
         android:layout_margin="10dp"
         android:hint="Ingrese su nombre"
+        android:textColor="@color/white"
         />
 
     <TextView
@@ -34,6 +36,7 @@
         android:layout_height="wrap_content"
         android:text="Apellido de usuario"
         android:textSize="20sp"
+        android:textColor="@color/white"
         />
     <EditText
         android:layout_width="match_parent"
@@ -43,6 +46,7 @@
         android:layout_gravity="center"
         android:layout_margin="10dp"
         android:hint="Ingrese su apellido"
+        android:textColor="@color/white"
         />
 
     <TextView
@@ -50,6 +54,7 @@
         android:layout_height="wrap_content"
         android:text="Fecha de nacimiento"
         android:textSize="20sp"
+        android:textColor="@color/white"
         />
     <EditText
         android:layout_width="match_parent"
@@ -60,6 +65,7 @@
         android:layout_margin="10dp"
         android:inputType="date"
         android:hint="@string/date_example"
+        android:textColor="@color/white"
 
         />
 
@@ -68,14 +74,17 @@
         android:layout_height="wrap_content"
         android:text="Género"
         android:textSize="18sp"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="8dp"
+        android:textColor="@color/white"/>
+
 
     <Spinner
         android:id="@+id/regUserGenre"
         android:entries="@array/genero_array"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:spinnerMode="dropdown"/>
+        android:spinnerMode="dropdown"
+        android:textColor="@color/white"/>
 
 
     <TextView
@@ -83,6 +92,7 @@
         android:layout_height="wrap_content"
         android:text="Email"
         android:textSize="20sp"
+        android:textColor="@color/white"
         />
     <EditText
         android:layout_width="match_parent"
@@ -93,6 +103,7 @@
         android:layout_margin="10dp"
         android:inputType="textEmailAddress"
         android:hint="Ingrese su correo electrónico"
+        android:textColor="@color/white"
     />
 
     <TextView
@@ -100,6 +111,7 @@
         android:layout_height="wrap_content"
         android:text="Contraseña"
         android:textSize="20sp"
+        android:textColor="@color/white"
         />
     <EditText
         android:layout_width="match_parent"
@@ -110,6 +122,7 @@
         android:layout_margin="10dp"
         android:inputType="textPassword"
         android:hint="Ingrese nueva contraseña"
+        android:textColor="@color/white"
         />
 
 
@@ -124,6 +137,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/cbPrivacyPolicy"
+            android:textColor="@color/white"
             />
         <TextView
             android:id="@+id/tvPrivacyPolicy"

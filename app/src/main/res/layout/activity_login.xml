@@ -8,7 +8,7 @@
     tools:context=".LoginActivity"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:background="@color/black"
+    android:background="@drawable/fondo_app"
     >
 
     <TextView
@@ -25,14 +25,15 @@
         android:id="@+id/etUsuario"
         android:textSize="15sp"
         android:layout_margin="25dp"
+        android:textColor="@color/white"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ingresar Contraseña"
-        android:textSize="20sp"
         android:textColor="@color/white"
+        android:textSize="20sp"
         />
 
     <EditText
@@ -42,14 +43,15 @@
         android:textSize="15sp"
         android:layout_margin="25dp"
         android:inputType="textPassword"
+        android:textColor="@color/white"
         />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Recordar Usuario"
-        android:id="@+id/cbRecordarUsuario"
         android:textColor="@color/white"
+        android:id="@+id/cbRecordarUsuario"
         />
 
     <Button

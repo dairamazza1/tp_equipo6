@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/fondo_app">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,6 +25,7 @@
             android:textSize="30sp"
             android:textColor="@color/red"
             android:layout_margin="5dp"
+
             />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -32,7 +34,8 @@
             android:layout_height="wrap_content"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/pelicula"
-            android:orientation="horizontal" />
+            android:orientation="horizontal"
+            />
 
         <TextView
             android:layout_width="wrap_content"
