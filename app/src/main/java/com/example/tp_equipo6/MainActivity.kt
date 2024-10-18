@@ -112,6 +112,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId==R.id.itemCerrarSesion){
+            var preferencias = getSharedPreferences(resources.getString(R.string.sp_credenciales), MODE_PRIVATE)
+            preferencias.edit().putString(resources.getString(R.string.nombre_usuario),"").apply()
+            preferencias.edit().putString(resources.getString(R.string.password_usuario),"").apply()
             val intent = Intent(this,LoginActivity::class.java)
             startActivity(intent)
             finish()
