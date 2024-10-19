@@ -14,6 +14,10 @@ Tendencia asignada a las críticas profesionales.
 Valoración de las críticas de todos los usuarios a todas las películas.
 
     </string>
+
+    <string name="poster_pelicula">Poster de pélicula</string>
+
+
     <string name="CerrarSesion">Cerrar Sesion</string>
     <string name="titulo">Reseñas App\n</string>
     <!-- Array para el Spinner -->
@@ -31,4 +35,7 @@ Valoración de las críticas de todos los usuarios a todas las películas.
     <string name="password_usuario">PASSWORD\n</string>
     <string name="movie_icon">Icono pelicula</string>
     <string name="expansion_icon">.\n</string>
+
+
+
 </resources>

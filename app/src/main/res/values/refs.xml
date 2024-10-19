@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <drawable name="save_icon" />
-    <drawable name="favourite_icon" />
-    <drawable name="share_icon" />
-    <drawable name="open_in_full_icon" />
-</resources>
