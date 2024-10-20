@@ -1,25 +1,29 @@
 package com.example.tp_equipo6
 
 import android.os.Bundle
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import android.widget.ImageView
+import android.widget.TextView
+import com.bumptech.glide.Glide
 
 class CompleteMovieData : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_complete_movie_data)
 
-        // Obtener los datos de la película desde el Intent
-        val id = intent.getIntExtra("id", 0)
-        val nombre = intent.getStringExtra("titulo")
-        val genero = intent.getStringExtra("genero")
+        val titulo = intent.getStringExtra("titulo")
+        //val genero = intent.getStringExtra("genero")
+        val sipnosis = intent.getStringExtra("sipnosis")
+        val fecha = intent.getStringExtra("fecha")
+        val poster = intent.getStringExtra("poster")
 
-        // Obtener las vistas del XML
-        val tvTitulo = findViewById<TextView>(R.id.titulo)
-        val tvGenero = findViewById<TextView>(R.id.genero)
+        val posterImageView: ImageView = findViewById(R.id.posterImageViewDetalle)
+        val tituloTextView: TextView = findViewById(R.id.tituloTextViewDetalle)
+        val sipnosisTextView: TextView = findViewById(R.id.sipnosisTextView)
 
-        // Asignar los datos a las vistas
-        tvTitulo.text = nombre
-        tvGenero.text = genero
+
+        tituloTextView.text = titulo
+        sipnosisTextView.text = sipnosis
+        }
     }
-}
