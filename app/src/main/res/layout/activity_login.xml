@@ -54,20 +54,22 @@
         android:id="@+id/cbRecordarUsuario"
         />
 
-    <Button
-        android:id="@+id/btnRegistrarse"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Crear Usuario"
-        android:layout_margin="5dp"
-        android:textSize="18sp"
-        />
+
 
     <Button
         android:id="@+id/btnIniciarSesion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Iniciar Sesion"
+        android:layout_margin="5dp"
+        android:textSize="18sp"
+        />
+
+    <Button
+        android:id="@+id/btnRegistrarse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Crear Usuario"
         android:layout_margin="5dp"
         android:textSize="18sp"
         />
