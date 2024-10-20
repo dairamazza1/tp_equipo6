@@ -59,9 +59,9 @@ class LoginActivity : AppCompatActivity() {
         btnRegistrarse = findViewById(R.id.btnRegistrarse)
         btnIniciarSesion = findViewById(R.id.btnIniciarSesion)
 
-        var preferencias = getSharedPreferences(resources.getString(R.string.sp_credenciales), MODE_PRIVATE)
-        var usuarioGuardado = preferencias.getString(resources.getString(R.string.nombre_usuario),"")
-        var passwordGuardado = preferencias.getString(resources.getString(R.string.password_usuario),"")
+        val preferencias = getSharedPreferences(resources.getString(R.string.sp_credenciales), MODE_PRIVATE)
+        val usuarioGuardado = preferencias.getString(resources.getString(R.string.nombre_usuario),"")
+        val passwordGuardado = preferencias.getString(resources.getString(R.string.password_usuario),"")
 
         if(usuarioGuardado!= "" && passwordGuardado!= ""){
 
@@ -93,8 +93,8 @@ class LoginActivity : AppCompatActivity() {
                 val usuariosRegistrados: MutableList<Usuario> = ArrayList()
                 val bddUsuario = AppDatabase.getDatabase(applicationContext)
                 usuariosRegistrados.addAll(bddUsuario.usuarioDao().getAll())
-                val uRegistrado: Boolean =false
-                val i:Int =0
+                var uRegistrado: Boolean =false
+                var i:Int =0
                 while (i<usuariosRegistrados.size && uRegistrado == false){
                     if(usuario == usuariosRegistrados.get(i).userName.toString() && password == usuariosRegistrados.get(i).userPassword.toString()){
                         uRegistrado = true
