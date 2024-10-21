@@ -15,6 +15,7 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -34,6 +35,7 @@ class LoginActivity : AppCompatActivity() {
     lateinit var cbRecordarUsuario: CheckBox
     lateinit var btnRegistrarse: Button
     lateinit var btnIniciarSesion: Button
+    lateinit var toolbar: Toolbar
 
     //notificacion
     private val CHANNEL_ID : String = "Recordar Usuario"
@@ -52,6 +54,9 @@ class LoginActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar!!.title = "Cinema App"
 
         //Fragmento
         val fragmentoInfo = FragmentoInfo()

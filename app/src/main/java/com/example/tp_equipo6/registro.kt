@@ -11,6 +11,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
@@ -25,6 +26,7 @@ class registro : AppCompatActivity() {
     lateinit var cbPolicyPrivacy : CheckBox
     lateinit var btnregistro: Button
     lateinit var etPolicyPrivacy: TextView
+    lateinit var toolbar: Toolbar
 
 
 
@@ -47,6 +49,10 @@ class registro : AppCompatActivity() {
         cbPolicyPrivacy = findViewById(R.id.cbPrivacyPolicy)
         etPolicyPrivacy = findViewById(R.id.tvPrivacyPolicy)
         btnregistro = findViewById(R.id.btnRegistrar)
+
+        toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar!!.title = "Cinema App"
 
 
         etPolicyPrivacy.setOnClickListener {
