@@ -53,6 +53,12 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
 
+        //Fragmento
+        val fragmentoInfo = FragmentoInfo()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.contenedor_fragmento_info, fragmentoInfo)
+            .commit()
+
         etUsuario = findViewById(R.id.etUsuario)
         etPassword = findViewById(R.id.etPassword)
         cbRecordarUsuario = findViewById(R.id.cbRecordarUsuario)
