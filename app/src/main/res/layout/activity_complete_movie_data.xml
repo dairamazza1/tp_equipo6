@@ -13,25 +13,27 @@
         android:padding="16dp">
 
         <!-- Póster de la película -->
-        <ImageView
-            android:id="@+id/posterImageViewDetalle"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_marginTop="16dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
 
         <!-- Título de la película -->
+        <ImageView
+            android:id="@+id/posterImageViewDetalle"
+            android:layout_width="150dp"
+            android:layout_height="225dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/tituloTextViewDetalle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/posterImageViewDetalle"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/posterImageViewDetalle"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="16dp"/>
 
@@ -43,16 +45,71 @@
             android:textSize="18sp"
             android:textColor="@android:color/darker_gray"
             app:layout_constraintTop_toBottomOf="@id/tituloTextViewDetalle"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/posterImageViewDetalle"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="8dp"/>
 
+        <!-- Estrellas de puntuacion -->
+
+        <ImageView
+            android:id="@+id/estrella1"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:layout_constraintBottom_toTopOf="@id/fechaYVotosLinearLayout"
+            app:layout_constraintEnd_toStartOf="@id/estrella2"
+            app:layout_constraintStart_toEndOf="@id/posterImageViewDetalle"
+            app:layout_constraintTop_toBottomOf="@id/generoTextView"
+            app:layout_constraintVertical_bias="0.277" />
+
+
+        <ImageView
+            android:id="@+id/estrella2"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:layout_constraintBottom_toTopOf="@id/fechaYVotosLinearLayout"
+            app:layout_constraintEnd_toStartOf="@id/estrella3"
+            app:layout_constraintStart_toEndOf="@id/estrella1"
+            app:layout_constraintTop_toBottomOf="@id/generoTextView"
+            app:layout_constraintVertical_bias="0.277" />
+
+        <ImageView
+            android:id="@+id/estrella3"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:layout_constraintBottom_toTopOf="@id/fechaYVotosLinearLayout"
+            app:layout_constraintEnd_toStartOf="@id/estrella5"
+            app:layout_constraintStart_toEndOf="@id/estrella2"
+            app:layout_constraintTop_toBottomOf="@id/generoTextView"
+            app:layout_constraintVertical_bias="0.277" />
+
+        <ImageView
+            android:id="@+id/estrella5"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:layout_constraintBottom_toTopOf="@id/fechaYVotosLinearLayout"
+            app:layout_constraintEnd_toStartOf="@id/estrella6"
+            app:layout_constraintStart_toEndOf="@id/estrella3"
+            app:layout_constraintTop_toBottomOf="@id/generoTextView"
+            app:layout_constraintVertical_bias="0.277" />
+
+        <ImageView
+            android:id="@+id/estrella6"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:layout_constraintBottom_toTopOf="@id/fechaYVotosLinearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/estrella5"
+            app:layout_constraintTop_toBottomOf="@id/generoTextView"
+            app:layout_constraintVertical_bias="0.277" />
+
+
         <!-- Fecha y cantidad de votos -->
         <LinearLayout
+            android:id="@+id/fechaYVotosLinearLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@id/generoTextView"
+            app:layout_constraintTop_toBottomOf="@id/posterImageViewDetalle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="8dp">
@@ -62,7 +119,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:layout_weight="1"/>
 
             <TextView
@@ -70,7 +127,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:layout_marginStart="16dp"/>
         </LinearLayout>
 
@@ -80,7 +137,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="16sp"
-            app:layout_constraintTop_toBottomOf="@id/posterImageViewDetalle"
+            app:layout_constraintTop_toBottomOf="@id/fechaYVotosLinearLayout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="30dp"

@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface WebService {
     @GET("now_playing")
-    suspend fun obtenerCartelera(
+     suspend fun obtenerCartelera(
         @Query("api_key") apiKey: String
     ): retrofit2.Response<ResponsePeliculas>
 

@@ -1,8 +1,12 @@
 package com.example.tp_equipo6
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
+import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.CoroutineScope
@@ -11,6 +15,8 @@ import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
+
+    lateinit var toolbar: Toolbar
     private lateinit var rVLanzamiento: RecyclerView
     private lateinit var rVPopular: RecyclerView
     private lateinit var rVMasVotadas: RecyclerView
@@ -24,6 +30,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+        toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar!!.title = resources.getString(R.string.titulo)
         rVLanzamiento = findViewById(R.id.recyclerViewLanzamiento)
         rVLanzamiento.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         rVPopular = findViewById(R.id.recyclerViewPopular)
@@ -32,7 +42,6 @@ class MainActivity : AppCompatActivity() {
         rVMasVotadas.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         rVProximas = findViewById(R.id.recyclerViewProximas)
         rVProximas.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-
 
         obtenerPeliculas()
     }
@@ -95,5 +104,22 @@ class MainActivity : AppCompatActivity() {
                 Log.e("Error API", responseCartelera.errorBody()?.string() ?: "Error desconocido")
             }
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_cerrarsesion,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId==R.id.itemCerrarSesion){
+            var preferencias = getSharedPreferences(resources.getString(R.string.sp_credenciales), MODE_PRIVATE)
+            preferencias.edit().putString(resources.getString(R.string.nombre_usuario),"").apply()
+            preferencias.edit().putString(resources.getString(R.string.password_usuario),"").apply()
+            val intent = Intent(this,LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

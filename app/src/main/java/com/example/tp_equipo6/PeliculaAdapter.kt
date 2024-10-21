@@ -35,6 +35,7 @@ class PeliculaAdapter(private val context: Context, private var peliculas: List<
                 intent.putExtra("fecha", pelicula.fechaDeSalida)
                 intent.putExtra("cantidadDeVotos", pelicula.cantidadDeVotos)
 
+
                 context.startActivity(intent)
             }
         }

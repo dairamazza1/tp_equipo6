@@ -20,12 +20,22 @@ class CompleteMovieData : AppCompatActivity() {
         val votos = intent.getFloatExtra("CantidadDeVotos",0f)
         val votoProximamente = "Próximamente"
 
+
+
+
         val posterImageView: ImageView = findViewById(R.id.posterImageViewDetalle)
         val tituloTextView: TextView = findViewById(R.id.tituloTextViewDetalle)
         val sipnosisTextView: TextView = findViewById(R.id.sipnosisTextView)
         val fechaTextView: TextView = findViewById(R.id.fechaTextView)
         val generoTextView: TextView = findViewById(R.id.generoTextView)
         val votosTextView: TextView = findViewById(R.id.cantidadVotosTextView)
+
+
+        val estrella1 : ImageView = findViewById(R.id.estrella1)
+        val estrella2 : ImageView = findViewById(R.id.estrella2)
+        val estrella3 : ImageView = findViewById(R.id.estrella3)
+        val estrella5 : ImageView = findViewById(R.id.estrella5)
+        val estrella6 : ImageView = findViewById(R.id.estrella6)
 
 
         tituloTextView.text = titulo
@@ -37,6 +47,7 @@ class CompleteMovieData : AppCompatActivity() {
         }else{
             votosTextView.text = votos.toString()
         }
+
 
         Glide.with(this)
             .load("https://image.tmdb.org/t/p/w500${poster}")

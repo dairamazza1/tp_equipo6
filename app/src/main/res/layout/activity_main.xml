@@ -1,97 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo_app"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tvLanzamiento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Lanzamiento"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:padding="8dp" />
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/primary_layout"
+            />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewLanzamiento"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tvLanzamiento"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:scrollbars="horizontal"
-        android:orientation="horizontal"/>
+        <TextView
+            android:id="@+id/tvLanzamiento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lanzamiento"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            android:padding="8dp" />
 
-    <TextView
-        android:id="@+id/tvPopular"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Popular"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/recyclerViewLanzamiento"
-        app:layout_constraintStart_toStartOf="parent"
-        android:padding="8dp" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewLanzamiento"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvLanzamiento"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:scrollbars="horizontal"
+            android:orientation="horizontal"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewPopular"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tvPopular"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="8dp"
-        android:scrollbars="horizontal"
-        android:orientation="horizontal"/>
+        <TextView
+            android:id="@+id/tvPopular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Popular"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/recyclerViewLanzamiento"
+            app:layout_constraintStart_toStartOf="parent"
+            android:padding="8dp" />
 
-    <TextView
-        android:id="@+id/tvMasVotadas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Más Votadas"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/recyclerViewPopular"
-        app:layout_constraintStart_toStartOf="parent"
-        android:padding="8dp" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewPopular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvPopular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="8dp"
+            android:scrollbars="horizontal"
+            android:orientation="horizontal"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewMasVotadas"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tvMasVotadas"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:scrollbars="horizontal"
-        android:orientation="horizontal"/>
+        <TextView
+            android:id="@+id/tvMasVotadas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Más Votadas"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/recyclerViewPopular"
+            app:layout_constraintStart_toStartOf="parent"
+            android:padding="8dp" />
 
-    <TextView
-        android:id="@+id/tvProximas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Próximamente"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/recyclerViewMasVotadas"
-        app:layout_constraintStart_toStartOf="parent"
-        android:padding="8dp" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewMasVotadas"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvMasVotadas"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:scrollbars="horizontal"
+            android:orientation="horizontal"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewProximas"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tvProximas"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="8dp"
-        android:scrollbars="horizontal"
-        android:orientation="horizontal"/>
+        <TextView
+            android:id="@+id/tvProximas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Próximamente"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/recyclerViewMasVotadas"
+            app:layout_constraintStart_toStartOf="parent"
+            android:padding="8dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewProximas"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvProximas"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="8dp"
+            android:scrollbars="horizontal"
+            android:orientation="horizontal"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
