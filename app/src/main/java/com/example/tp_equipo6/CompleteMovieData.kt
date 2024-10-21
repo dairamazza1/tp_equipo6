@@ -17,8 +17,9 @@ class CompleteMovieData : AppCompatActivity() {
         val sipnosis = intent.getStringExtra("sipnosis")
         val fecha = intent.getStringExtra("fecha")
         val poster = intent.getStringExtra("poster")
-        val votos = intent.getFloatExtra("CantidadDeVotos",0f)
+        val votos = intent.getIntExtra("cantidadDeVotos",0)
         val votoProximamente = "Próximamente"
+        val puntuacionPromedio = intent.getFloatExtra("puntuacionPromedio",0f)
 
 
 
@@ -29,6 +30,7 @@ class CompleteMovieData : AppCompatActivity() {
         val fechaTextView: TextView = findViewById(R.id.fechaTextView)
         val generoTextView: TextView = findViewById(R.id.generoTextView)
         val votosTextView: TextView = findViewById(R.id.cantidadVotosTextView)
+        val ratingTextView : TextView = findViewById(R.id.tvRating)
 
 
         val estrella1 : ImageView = findViewById(R.id.estrella1)
@@ -42,12 +44,30 @@ class CompleteMovieData : AppCompatActivity() {
         sipnosisTextView.text = sipnosis
         fechaTextView.text = fecha
         generoTextView.text = genero
-        if(votos == 0f){
+        if(votos == 0){
             votosTextView.text = votoProximamente
         }else{
             votosTextView.text = votos.toString()
         }
 
+
+
+        if(puntuacionPromedio >= 2f){
+            estrella1.setImageResource(R.drawable.baseline_star_rate_24)
+            if(puntuacionPromedio >= 4f){
+                estrella2.setImageResource(R.drawable.baseline_star_rate_24)
+                if(puntuacionPromedio >= 6f){
+                    estrella3.setImageResource(R.drawable.baseline_star_rate_24)
+                    if(puntuacionPromedio >= 8f){
+                        estrella5.setImageResource(R.drawable.baseline_star_rate_24)
+                        if(puntuacionPromedio == 10f){
+                            estrella6.setImageResource(R.drawable.baseline_star_rate_24)
+                        }
+                    }
+                }
+            }
+        }
+        ratingTextView.text = puntuacionPromedio.toString()
 
         Glide.with(this)
             .load("https://image.tmdb.org/t/p/w500${poster}")

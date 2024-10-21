@@ -51,6 +51,18 @@
 
         <!-- Estrellas de puntuacion -->
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RATING"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@id/estrella1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.075"
+            app:layout_constraintStart_toEndOf="@id/posterImageViewDetalle"
+            app:layout_constraintTop_toBottomOf="@id/generoTextView" />
+
         <ImageView
             android:id="@+id/estrella1"
             android:layout_width="24dp"
@@ -97,11 +109,21 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             app:layout_constraintBottom_toTopOf="@id/fechaYVotosLinearLayout"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/tvRating"
             app:layout_constraintStart_toEndOf="@id/estrella5"
             app:layout_constraintTop_toBottomOf="@id/generoTextView"
             app:layout_constraintVertical_bias="0.277" />
 
+
+        <TextView
+            android:id="@+id/tvRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/fechaYVotosLinearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/estrella6"
+            app:layout_constraintTop_toBottomOf="@id/generoTextView"
+            app:layout_constraintVertical_bias="0.277" />
 
         <!-- Fecha y cantidad de votos -->
         <LinearLayout
@@ -121,6 +143,14 @@
                 android:textSize="16sp"
                 android:textColor="@android:color/white"
                 android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="Votos:"
+                android:textColor="@android:color/white"
+                android:layout_marginStart="16dp"/>
 
             <TextView
                 android:id="@+id/cantidadVotosTextView"

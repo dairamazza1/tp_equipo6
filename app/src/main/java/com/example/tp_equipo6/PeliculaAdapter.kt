@@ -34,7 +34,7 @@ class PeliculaAdapter(private val context: Context, private var peliculas: List<
                 intent.putExtra("sipnosis", pelicula.sipnosis)
                 intent.putExtra("fecha", pelicula.fechaDeSalida)
                 intent.putExtra("cantidadDeVotos", pelicula.cantidadDeVotos)
-
+                intent.putExtra("puntuacionPromedio", pelicula.puntuacionPromedio)
 
                 context.startActivity(intent)
             }

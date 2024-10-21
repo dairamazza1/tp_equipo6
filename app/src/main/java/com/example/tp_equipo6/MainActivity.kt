@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity() {
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar!!.title = resources.getString(R.string.titulo)
+
         rVLanzamiento = findViewById(R.id.recyclerViewLanzamiento)
         rVLanzamiento.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         rVPopular = findViewById(R.id.recyclerViewPopular)
@@ -66,6 +67,54 @@ class MainActivity : AppCompatActivity() {
                 Log.d("Proximas:", peliculasProximas.toString())
 
                 for (pelicula in peliculas) {
+                    val nombresGeneros =
+                        StringBuilder() // Usamos un StringBuilder para concatenar los nombres
+                    for (idGenero in pelicula.generosId) {
+                        // Buscar el nombre del género por el ID
+                        val genero = generos.find { it.id == idGenero }
+                        if (genero != null) {
+                            if (nombresGeneros.isNotEmpty()) {
+                                nombresGeneros.append(", ") // Agregar una coma entre géneros
+                            }
+                            nombresGeneros.append(genero.name)
+                        }
+                        pelicula.generos = nombresGeneros.toString()
+                    }
+                }
+
+                for (pelicula in peliculasPopulares) {
+                    val nombresGeneros =
+                        StringBuilder() // Usamos un StringBuilder para concatenar los nombres
+                    for (idGenero in pelicula.generosId) {
+                        // Buscar el nombre del género por el ID
+                        val genero = generos.find { it.id == idGenero }
+                        if (genero != null) {
+                            if (nombresGeneros.isNotEmpty()) {
+                                nombresGeneros.append(", ") // Agregar una coma entre géneros
+                            }
+                            nombresGeneros.append(genero.name)
+                        }
+                        pelicula.generos = nombresGeneros.toString()
+                    }
+                }
+
+                for (pelicula in peliculasMasVotadas) {
+                    val nombresGeneros =
+                        StringBuilder() // Usamos un StringBuilder para concatenar los nombres
+                    for (idGenero in pelicula.generosId) {
+                        // Buscar el nombre del género por el ID
+                        val genero = generos.find { it.id == idGenero }
+                        if (genero != null) {
+                            if (nombresGeneros.isNotEmpty()) {
+                                nombresGeneros.append(", ") // Agregar una coma entre géneros
+                            }
+                            nombresGeneros.append(genero.name)
+                        }
+                        pelicula.generos = nombresGeneros.toString()
+                    }
+                }
+
+                for (pelicula in peliculasProximas) {
                     val nombresGeneros =
                         StringBuilder() // Usamos un StringBuilder para concatenar los nombres
                     for (idGenero in pelicula.generosId) {
