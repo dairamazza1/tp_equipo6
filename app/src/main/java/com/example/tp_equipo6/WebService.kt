@@ -25,4 +25,8 @@ interface WebService {
         @Query("api_key") apiKey: String
     ): retrofit2.Response<ResponsePeliculas>
 
+    @GET("list")
+    suspend fun obtenerGeneros(
+        @Query("api_key") apiKey: String
+    ): retrofit2.Response<ResponseGeneros>
 }

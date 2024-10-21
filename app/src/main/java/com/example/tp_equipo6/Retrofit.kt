@@ -12,4 +12,11 @@ object Retrofit {
             .build()
             .create(WebService::class.java)
     }
+    val webServiceGeneros: WebService by lazy {
+        Retrofit.Builder()
+            .baseUrl(Constantes.BASE_URL_GENEROS)
+            .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
+            .build()
+            .create(WebService::class.java)
+    }
 }

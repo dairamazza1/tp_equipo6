@@ -30,9 +30,10 @@ class PeliculaAdapter(private val context: Context, private var peliculas: List<
                 val intent = Intent(context, CompleteMovieData::class.java)
                 intent.putExtra("titulo", pelicula.titulo)
                 intent.putExtra("poster", pelicula.posterPath)
-                //intent.putExtra("genero", pelicula.genero)
+                intent.putExtra("genero", pelicula.generos)
                 intent.putExtra("sipnosis", pelicula.sipnosis)
                 intent.putExtra("fecha", pelicula.fechaDeSalida)
+                intent.putExtra("cantidadDeVotos", pelicula.cantidadDeVotos)
 
                 context.startActivity(intent)
             }

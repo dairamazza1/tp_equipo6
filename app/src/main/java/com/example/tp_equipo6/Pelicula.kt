@@ -16,5 +16,6 @@ data class Pelicula(@SerializedName("id") var id: Int,
                     @SerializedName("vote_count") var cantidadDeVotos: Int,
                     @SerializedName("adult") var paraAdultos: String,
                     @SerializedName("backdrop_path") var backdropPath: String,
-                    @SerializedName("genre_ids") var genero: List<Int>
+                    @SerializedName("genre_ids") var generosId: List<Int>,
+                    var generos: String
 )
